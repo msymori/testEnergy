@@ -47,7 +47,7 @@
       <div class="city-form-wrapper">
         <%= form_with(model: @city, local: true) do |f| %>
           <div class="search">
-            <%= f.label :name, 'City Name', class: 'city-form-label' %>
+            <%= f.label :name, 'City Name', class: 'form-label' %>
             <%= f.text_field :name, class: 'city-form' %>
             <%= f.submit 'Create', class: "btn btn-form" %>
           </div>

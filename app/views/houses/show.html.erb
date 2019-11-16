@@ -1,0 +1,33 @@
+
+<div class="house-wrapper">
+  <div class="container">
+    
+    <div class="house-info">
+      <div class="house-title">
+        <p class="title"><%= @house.lastname %></p>
+      </div>
+      <table>
+        <thead class="head-house">
+          <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>City</th>
+            <th>People</th>
+            <th>Child</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><%= @house.id %></tr>
+          <tr><%= @house.firstname %></tr>
+          <tr><%= @house.lastname %></tr>
+          <tr><%= @city_name[@house.city_id - 1].name %></tr>
+          <tr><%= @house.num_of_people %></tr>
+          <tr><%= @house.has_child == 1 ? "Yes" : "No" %></tr>
+        </tbody>  
+      </table>
+    </div>
+    
+    
+  </div>
+</div>

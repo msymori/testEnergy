@@ -26,6 +26,15 @@ a {
   clear: left;
 }
 
+p {
+  padding: 5px;
+  margin: 5px;
+}
+
+.top {
+  margin-top:10px;
+  color: white;
+}
 //-----------------  header  ------------------------------------
 
 header {
@@ -60,9 +69,10 @@ header {
 //-----------------  form  ------------------------------------
 
 //----------------- city form ---------------------------------
-.city-form-label {
-  font-size:20px;
+.form-label {
+  font-size:16px;
   margin-right: 13px;
+  letter-spacing:2px;
 }
 
 .city-form {
@@ -87,9 +97,11 @@ header {
 .btn {
   color:white;
   background-color:gray;
-  font-size:20px;
-  padding:5px;
+  font-size:16px;
+  padding:4px;
+  margin-top:10px;
 }
+
 
 //----------------- chart  ----------------------------------
 .chart {
@@ -98,7 +110,7 @@ header {
 
 
 
-//----------------- city wrapper  ----------------------------------
+//----------------- city wrapper  ---------------------------
 .city_wrapper {
   padding: 80px 0 100px 0;
   text-align: center;
@@ -140,5 +152,50 @@ tr:hover td{
 
 .city-create-wrapper {
 }
+
+//----------------- houses wrapper  ------------------------
+
+.houses-wrapper {
+  padding:80px 0 100px 0;
+  text-align:center;
+  background-color:gray;
+  color:white;
+}
+
+.houses-create-wrapper {
+  margin-bottom:15px;
+}
+
+.house-data-wrapper{
+  margin-bottom:10px;
+}
+
+.house-link {
+  color:white;
+  border:1px solid white;
+  padding:7px;
+  transition:1s;
+}
+
+.house-link:hover {
+  background-color:white;
+  color:gray;
+  font-weight:3px;
+  transition:1s;
+}
+
+
+//----------------- house wrapper  ------------------------
+
+.house-wrapper {
+  padding:80px 0 100px 0;
+  text-align:center;
+  background-color:gray;
+  color:white;
+}
+
+
+
+
 
 
