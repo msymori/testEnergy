@@ -1,15 +1,12 @@
 require "city_energy.rb"
 
-class CityController < ApplicationController
+class CitiesController < ApplicationController
   def index
+    @city = City.new
     @cities_name = City.all
     @cities_energy = CityEnergy.sum_cities_energy()
     @energy_count = CityEnergy.group('city_id').count
   end
-  
-  def new
-    @city = City.new
-  end 
   
   def create
     @city = City.new(city_params)
