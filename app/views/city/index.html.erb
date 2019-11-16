@@ -1,0 +1,54 @@
+
+
+<div class="city_wrapper">
+  <div class="container">
+
+<!-- Total City graph  -->
+    
+    
+<!-- Information City Data  -->
+    <div class="city-data-wrapper">
+      <div class="city-title">
+        <p class="title">Data Information of city</p>
+      </div>
+      <table>
+        <thead class="head-house">
+          <tr>
+            <th>City</th>
+            <th>Count City Data</th>
+            <th>Total Energy Data</th>
+          </tr>
+        </thead>    
+        <tbody>
+          <% @cities_name.each do |city| %>
+            <tr>
+              <td><p><%= city.name %></p></td>
+              <td><p><%= @energy_count[city.id] %></p></td>
+              <td><p><%= @cities_energy[city.id] %></p></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    
+    
+<!-- Create City  -->
+    <div class="city-create-wrapper">
+      <div class="city-title">
+        <p class="title">New Create City</p>
+      </div>
+      <div class="city-form-wrapper">
+        <%= form_with(model: @city, local: true) do |f| %>
+          <div class="search">
+            <%= f.label :name, 'City Name' %>
+            <%= f.text_field :name, class: 'city-form' %>
+            <%= f.submit 'Create', class: "btn btn-form" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
