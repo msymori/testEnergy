@@ -1,3 +1,109 @@
 // Place all the styles related to the cities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//----------------- all ----------------------------------
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 870px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+//-----------------  form  ------------------------------------
+
+//----------------- city form ---------------------------------
+.city-form-label {
+  font-size:20px;
+  margin-right: 13px;
+}
+
+.city-form {
+  font:15px/24px sans-serif;
+	box-sizing: border-box;
+	width:50%;
+	padding:0.3em;
+	transition:0.3s;
+	letter-spacing:1px;
+	color:white;
+	border:none;
+	border-bottom:2px solid #1b2538;
+	background:transparent;
+	margin-right:10px;
+}
+
+.city-form:focus {
+	border-bottom: 2px solid #da3c41;
+	outline: none;
+}
+
+.btn {
+  color:white;
+  background-color:gray;
+  font-size:20px;
+  padding:5px;
+}
+
+//----------------- chart  ----------------------------------
+.chart {
+    background-color:lightgray;
+}
+
+
+
+//----------------- city wrapper  ----------------------------------
+.city_wrapper {
+  padding: 50px 0 100px 0;
+  text-align: center;
+  background-color: gray;
+  color:white;
+}
+
+.table,tr,td {
+  width:250px;
+  letter-spacing: 2px;
+  border-collapse: collapse;
+  text-align:center;
+}
+
+tr:hover td{
+  opacity: 0.6;
+}
+
+.title {
+  font-size:25px;
+  letter-spacing:2px;
+  font-weight:bold;
+  border-bottom:1px solid white;
+  margin-bottom:20px;
+  color:white;
+}
+
+.city-data-wrapper {
+  text-align:center;
+}
+
+.city-chart-wrapper {
+  margin-bottom:60px;
+}
+
+.city-data-wrapper {
+  margin-bottom:60px;
+}
+
+.city-create-wrapper {
+}
+
+
