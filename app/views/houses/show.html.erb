@@ -6,7 +6,7 @@
       <div class="house-title">
         <p class="title"><%= @house.lastname %></p>
       </div>
-      <table>
+      <table class="home-top">
         <thead class="head-house">
           <tr>
             <th>ID</th>
@@ -18,16 +18,23 @@
           </tr>
         </thead>
         <tbody>
-          <tr><%= @house.id %></tr>
-          <tr><%= @house.firstname %></tr>
-          <tr><%= @house.lastname %></tr>
-          <tr><%= @city_name[@house.city_id - 1].name %></tr>
-          <tr><%= @house.num_of_people %></tr>
-          <tr><%= @house.has_child == 1 ? "Yes" : "No" %></tr>
-        </tbody>  
+          <tr class="head-tr">
+            <td><p><%= @house.id %></p></td>
+            <td><p><%= @house.firstname %></p></td>
+            <td><p><%= @house.lastname %></p></td>
+            <td><p><%= @city_name[@house.city_id - 1].name %></p></td>
+            <td><p><%= @house.num_of_people %></p></td>
+            <td><p><%= @house.has_child == 1 ? "Yes" : "No" %></p></td>
+          </tr>
+        </tbody>
       </table>
     </div>
     
     
+    <% @years.length.times do |i| %>
+      <%= high_chart("chart#{i}", @charts[i]) %>
+    <% end %>
+
+      
   </div>
 </div>
