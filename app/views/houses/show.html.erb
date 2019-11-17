@@ -30,10 +30,13 @@
       </table>
     </div>
     
-    
-    <% @years.length.times do |i| %>
-      <%= high_chart("chart#{i}", @charts[i]) %>
-    <% end %>
+    <div class="house-chart-wrapper">
+      <% @years.length.times do |i| %>
+        <div class="house-chart">
+          <%= high_chart("chart#{i}", @charts[i]) %>
+        </div>
+      <% end %>
+    </div>
 
       
   </div>

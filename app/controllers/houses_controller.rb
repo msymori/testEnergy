@@ -20,8 +20,8 @@ class HousesController < ApplicationController
       (@target_dates.length).times do |i|
         if @target_dates[i][0].equal?(y.year) then
           @month << @target_dates[i][1]
-          @energy << @target_dates[i][2]
-          @daylight << @target_dates[i][3]
+          @daylight << @target_dates[i][2]
+          @energy << @target_dates[i][3]
         end
       end
       @chart = get_chart_graph(y.year ,@month, @daylight, @energy)
@@ -33,6 +33,15 @@ class HousesController < ApplicationController
   end
 
   def create
+    @house = House.new(house_params)
+    
+    if @house.save
+      flash[:success] = 'create house!!'
+      redirect_to @house
+    else
+      flash[:danger] = 'not create house...'
+      render :index
+    end
   end
 
   def edit
@@ -41,7 +50,17 @@ class HousesController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
+    @house = House.find(params[:id])
+    @id = @house.id
+    @house.destroy
+    @energy = Energy.where(house_id: @id)
+    @energy.each do |e|
+      e.destroy
+    end
+    
+    flash[:success] = 'Message'
+    redirect_to houses_url
   end
 
   private
@@ -53,5 +72,9 @@ class HousesController < ApplicationController
         c.series(name: "daylight", data: daylight, color: "red")
         c.chart(backgroundColor: 'lightgray')
       end
+    end
+    
+    def house_params
+      params.require(:house).permit(:firstname, :lastname, :city_id, :num_of_people, :has_child)
     end
 end
