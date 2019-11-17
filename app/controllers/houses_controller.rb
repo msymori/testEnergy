@@ -11,23 +11,24 @@ class HousesController < ApplicationController
     @city_name = City.all
     @years = Energy.count_year(params[:id])
     @target_dates = Energy.get_data(params[:id], @years)
+    @energy = Energy.new
     @charts = []
     @month = []
     @daylight = []
-    @energy = []
+    @energy_production = []
     
     @years.each do |y|
       (@target_dates.length).times do |i|
         if @target_dates[i][0].equal?(y.year) then
           @month << @target_dates[i][1]
           @daylight << @target_dates[i][2]
-          @energy << @target_dates[i][3]
+          @energy_production << @target_dates[i][3]
         end
       end
-      @chart = get_chart_graph(y.year ,@month, @daylight, @energy)
+      @chart = get_chart_graph(y.year ,@month, @daylight, @energy_production)
       @charts << @chart
       @month = []
-      @energy = []
+      @energy_production = []
       @daylight  = []
     end
   end
