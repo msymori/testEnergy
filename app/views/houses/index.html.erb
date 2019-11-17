@@ -5,8 +5,21 @@
       <div class="houses-title">
         <p class="title">New House Create</p>
       </div>
+      
       <div class="houses-form-wrapper">
         <%= form_with(model: @house, local:true) do |f| %>
+          
+          <% if @house.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@house.errors.count, "error") %> prohibited this message from being saved:</h2>
+              <ul>
+                <% @house.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          
           <div class="form-group">
             <%= f.label :firstname, 'FirstName', class: 'form-label' %>
             <%= f.text_field :firstname, class: 'city-form' %>
@@ -44,7 +57,6 @@
         <table>
           <thead class="head-house">
             <tr>
-              <th>ID</th>
               <th>FirsNname</th>
               <th>LastName</th>
               <th>City</th>
@@ -56,7 +68,6 @@
           <tbody>
             <% @houses.each do |house| %>
               <tr>
-                <td><p><%= house.id %></p></td>
                 <td><p><%= house.firstname %></p></td>
                 <td><p><%= house.lastname %></p></td>
                 <td><p><%= @city_name[house.city_id - 1].name %></p></td>

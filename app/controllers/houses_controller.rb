@@ -40,14 +40,8 @@ class HousesController < ApplicationController
       redirect_to @house
     else
       flash[:danger] = 'not create house...'
-      render :index
+      redirect_to houses_url
     end
-  end
-
-  def edit
-  end
-
-  def update
   end
 
   def destroy
@@ -62,6 +56,8 @@ class HousesController < ApplicationController
     flash[:success] = 'Message'
     redirect_to houses_url
   end
+  
+  
 
   private
     def get_chart_graph(text, months, daylight, energy_production)
